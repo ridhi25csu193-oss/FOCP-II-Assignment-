@@ -475,7 +475,8 @@ QString AIAssistant::findMatchingCountry(const QString &input) const
     };
 
     for (auto it = countryAliases.constBegin(); it != countryAliases.constEnd(); ++it) {
-        for (const auto &alias : it.value()) {
+        const auto aliases = it.value();
+        for (const auto &alias : aliases) {
             if (input.contains(alias)) {
                 return it.key();
             }
@@ -497,7 +498,8 @@ QString AIAssistant::findMatchingRegion(const QString &input) const
     };
 
     for (auto it = regionAliases.constBegin(); it != regionAliases.constEnd(); ++it) {
-        for (const auto &alias : it.value()) {
+        const auto aliases = it.value();
+        for (const auto &alias : aliases) {
             if (input.contains(alias)) {
                 return it.key();
             }

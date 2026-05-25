@@ -1065,7 +1065,8 @@ void MainWindow::updateCharts()
 void MainWindow::updatePriceChart()
 {
     m_priceChart->removeAllSeries();
-    for (auto *axis : m_priceChart->axes()) {
+    const auto priceAxes = m_priceChart->axes();
+    for (auto *axis : priceAxes) {
         m_priceChart->removeAxis(axis);
     }
 
@@ -1153,7 +1154,8 @@ void MainWindow::updateRenewableChart()
 void MainWindow::updateEnergyMixChart()
 {
     m_energyMixChart->removeAllSeries();
-    for (auto *axis : m_energyMixChart->axes()) {
+    const auto mixAxes = m_energyMixChart->axes();
+    for (auto *axis : mixAxes) {
         m_energyMixChart->removeAxis(axis);
     }
 
@@ -1202,7 +1204,8 @@ void MainWindow::updateEnergyMixChart()
 void MainWindow::updateCarbonChart()
 {
     m_carbonChart->removeAllSeries();
-    for (auto *axis : m_carbonChart->axes()) {
+    const auto carbonAxes = m_carbonChart->axes();
+    for (auto *axis : carbonAxes) {
         m_carbonChart->removeAxis(axis);
     }
 
